@@ -1,10 +1,13 @@
 <script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
+import ThePosts from '@/components/ThePosts.vue';
 </script>
 
 <template>
-  <TheWelcome/>
+  <ThePosts/>
 </template>
 
 <style scoped>
+h1 {
+  margin: 0;
+}
 </style>
