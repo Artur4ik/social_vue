@@ -1,7 +1,6 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import SignService from "@/services/SignService";
-import type ResponseData from "@/types/ResponseData";
 import { useAuthStore } from '../stores/auth'
 
 export default defineComponent({
@@ -35,9 +34,9 @@ export default defineComponent({
       }
       this.isFetching = true;
       SignService.signIn(this.email, this.password)
-        .then((response: ResponseData) => {
+        .then((response) => {
           this.auth.setToken(response.data.data.token)
-          this.$router.push('/')
+          this.$router.push('/feed')
         })
         .catch((error: any) => {
           this.isFetching = false;

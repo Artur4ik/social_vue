@@ -1,9 +1,9 @@
 import client from "@/services/Client";
 import { useAuthStore } from '../stores/auth'
 
-class PostsService {
-  fetchPosts() {
-    return client.get("/posts", {
+class FeedService {
+  fetch() {
+    return client.get("/feed", {
       headers: {
         'Authorization': useAuthStore().token
       },
@@ -11,4 +11,4 @@ class PostsService {
   }
 }
 
-export default new PostsService();
+export default new FeedService();
